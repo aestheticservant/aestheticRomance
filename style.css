@@ -1,0 +1,2182 @@
+/* Base Reset & Soft Aesthetics */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    /* Locks the image to the screen so it never scrolls or cuts off! */
+    background-color: #3f2051; /* Fallback twilight color */
+    background-image: url('image.png'); /* Make sure your image name matches */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* 🔥 THIS IS THE MAGIC LINE */
+    background-repeat: no-repeat;
+    overflow-x: hidden; /* Prevents side-to-side scrolling */
+}
+
+main {
+    flex: 1;
+    padding: 30px 20px;
+    overflow-y: auto;
+    padding-bottom: 110px; /* Extra space for the nav */
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif; /* Ensure you added this font to your HTML earlier! */
+    color: #ffffff;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    /* Soft dark purple shadow to separate it from the sky */
+    text-shadow: 2px 2px 8px rgba(45, 20, 60, 0.6), 0 0 20px rgba(255, 255, 255, 0.4); 
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #f0e6f5; /* Soft lilac white */
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 6px rgba(45, 20, 60, 0.7);
+    margin-bottom: 25px;
+}
+
+/* Glassmorphism Elements */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 35px 25px;
+    box-shadow: 0 10px 30px rgba(45, 20, 60, 0.2);
+    margin-bottom: 25px;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.placeholder-text {
+    font-style: italic;
+    color: #888;
+    line-height: 1.6;
+}
+
+/* Page Transitions */
+.hidden {
+    display: none !important;
+}
+
+.active {
+    display: block;
+    animation: slideUpFade 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes slideUpFade {
+    0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* --- THE LONG LETTER SECTION (Scrapbook Style) --- */
+.scrapbook-style {
+    position: relative;
+    background-color: #fffafb;
+    /* This creates the cute grid paper effect from your 2nd image! */
+    background-image: 
+        linear-gradient(rgba(255, 182, 193, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 182, 193, 0.4) 1px, transparent 1px);
+    background-size: 25px 25px; /* Size of the grid squares */
+    
+    border-radius: 4px;
+    padding: 40px 25px;
+    text-align: left;
+    box-shadow: 0 10px 25px rgba(255, 77, 109, 0.15);
+    border: 1px solid rgba(255, 182, 193, 0.8);
+    margin-bottom: 30px;
+    overflow: hidden; /* Keeps tape inside the edges */
+}
+
+/* Faded background hearts in the corners (like images 1 & 3) */
+.scrapbook-style::before {
+    content: "💖";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    font-size: 80px;
+    opacity: 0.08;
+    transform: rotate(-20deg);
+    z-index: 0;
+}
+
+.scrapbook-style::after {
+    content: "🌸";
+    position: absolute;
+    bottom: -15px;
+    right: -10px;
+    font-size: 90px;
+    opacity: 0.08;
+    transform: rotate(15deg);
+    z-index: 0;
+}
+
+/* The Cursive "Love" Header */
+.cursive-header {
+    font-family: 'Dancing Script', cursive;
+    font-size: 48px;
+    color: #ff4d6d;
+    text-align: right;
+    margin-bottom: 20px;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+}
+
+/* Washi Tape Effect */
+.washi-tape {
+    position: absolute;
+    width: 100px;
+    height: 30px;
+    background-color: rgba(222, 184, 135, 0.45); /* Soft brownish-pink tape */
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    box-shadow: 1px 2px 4px rgba(0,0,0,0.05);
+    z-index: 2;
+}
+
+.tape-top-left {
+    top: 5px;
+    left: -25px;
+    transform: rotate(-40deg);
+}
+
+.tape-top-right {
+    top: 5px;
+    right: -25px;
+    transform: rotate(40deg);
+}
+
+/* Text adjustments for Bengali Handwriting */
+.scrapbook-style p {
+    font-family: 'Baloo Da 2', sans-serif; /* Cute Bengali marker handwriting */
+    font-size: 19px; /* Slightly larger for readable Bengali */
+    line-height: 25px; /* Matches the grid line height */
+    margin-bottom: 25px;
+    color: #4a3f41;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.scrapbook-style .greeting {
+    font-family: 'Baloo Da 2', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #ff4d6d;
+    margin-top: -10px;
+}
+
+.scrapbook-style .sign-off {
+    margin-top: 40px;
+    font-family: 'Galada', cursive; /* Flowing Bengali cursive for the signature */
+    font-size: 32px;
+    color: #ff4d6d;
+}
+
+/* --- Bottom Navigation --- */
+#bottom-nav {
+    position: fixed;
+    bottom: 15px;
+    left: 2%; /* Slightly wider to fit 7 icons */
+    width: 96%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-radius: 30px;
+    box-shadow: 0 10px 25px rgba(255, 77, 109, 0.15);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 20px; /* Slightly smaller to fit */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
+    flex: 1; /* Distributes space evenly */
+}
+
+.nav-btn:active {
+    transform: scale(0.8) translateY(5px);
+}
+
+.active-nav {
+    background: #ff4d6d;
+    box-shadow: 0 4px 10px rgba(255, 77, 109, 0.4);
+    transform: translateY(-5px);
+}
+
+/* --- Keno Toke Bhalo Lage (Reasons Generator) --- */
+#reasons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+}
+
+#reason-text {
+    font-size: 22px;
+    font-weight: 600;
+    color: #3b2845; /* Deep twilight plum */
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.cute-btn {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,230,255,0.9) 100%);
+    color: #5c3b6b; /* Elegant plum text */
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(45, 20, 60, 0.2), inset 0 0 10px rgba(255,255,255,0.6);
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.cute-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(45, 20, 60, 0.3), inset 0 0 15px rgba(255,255,255,0.9);
+    background: linear-gradient(135deg, #ffffff 0%, #f5eeff 100%);
+}
+
+.cute-btn:active {
+    transform: scale(0.95);
+}
+
+/* Floating Hearts Magic */
+#heart-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* She can click right through the hearts */
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    bottom: -50px;
+    animation: floatUp linear forwards;
+    opacity: 0.8;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-100vh) scale(1.5) rotate(20deg); opacity: 0; }
+}
+
+/* Text Fade Animation */
+@keyframes textFadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Moner Kotha (Polaroid Image Styling) --- */
+
+.polaroid-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.polaroid {
+    background: #fff;
+    padding: 10px 10px 25px 10px; /* Thicker border at the bottom like a real Polaroid */
+    border-radius: 4px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    transform: rotate(-2deg); /* A cute little tilt */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Make every even image tilt the other way for a natural look */
+.polaroid-wrapper:nth-child(even) .polaroid {
+    transform: rotate(3deg);
+}
+
+.polaroid:hover {
+    transform: scale(1.05) rotate(0deg); /* Straightens out and zooms slightly when she taps/hovers */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.polaroid img {
+    width: 100%;
+    border-radius: 2px;
+    display: block;
+}
+
+.polaroid-caption {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    color: #ff4d6d;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+
+/* --- Ghibli Animated Avatars --- */
+/* =========================================
+   FIXED PROPORTIONS & POSITIONING 🎨
+   ========================================= */
+
+/* 1. Avatars: Pinned low near the nav bar with a strong minimum size floor */
+/* 1. Avatars: Pinned low near the nav bar with a strong minimum size floor */
+.avatar {
+    position: fixed;
+    bottom: 12px !important; /* Sits right above the navigation bar */
+    width: clamp(210px, 28vw, 400px) !important; /* Healthy minimum floor prevents tiny shrinking */
+    height: auto !important;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 1;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.boy-avatar {
+    left: 1% !important;
+}
+
+.girl-avatar {
+    right: 1% !important;
+}
+
+
+
+/* Brings the card and button to the very front so they overlap the avatars slightly */
+.reason-card, .cute-btn {
+    position: relative;
+    z-index: 10; 
+}
+
+.reason-card {
+    position: relative;
+    margin-top: -15px !important; /* Shifts the text card higher up */
+    width: clamp(240px, 42vw, 380px) !important;
+    box-sizing: border-box;
+    z-index: 10;
+}
+
+
+/* --- Homepage Background --- */
+.homepage-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('image22.jpeg'); /* Ensure your image is named exactly this! */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Pushes the image behind the GIFs, text, and cards */
+    opacity: 0.6; /* Blends the image with the pastel pink background */
+    pointer-events: none; /* Ensures she can still click the button through the image */
+}
+
+
+/* --- Elegant Frosted Navigation Bar --- */
+#bottom-nav {
+    position: fixed;
+    bottom: 15px;
+    left: 2%; 
+    width: 96%;
+    /* Slightly less opaque background so the individual boxes stand out more */
+    background: rgba(255, 255, 255, 0.55); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6); 
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px; /* Tighter padding around the edges */
+    gap: 8px; /* 🔥 Adds perfect spacing between each box */
+    border-radius: 28px; /* Slightly less rounded to match the inner boxes */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); 
+    z-index: 100; 
+}
+
+/* The Individual Elegant Boxes */
+.nav-btn {
+    background: rgba(255, 255, 255, 0.3); /* Creates the frosted glass box */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Delicate border for each box */
+    font-size: 24px; 
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Adds a bouncy transition */
+    padding: 12px 0; /* Gives the box a nice height */
+    border-radius: 16px; /* 🔥 Elegant, rounded-square corners */
+    flex: 1; /* Ensures all boxes are exactly the same width */
+    opacity: 0.9; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Soft shadow to lift the box */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-btn:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+/* The Highlighted Active Box */
+.active-nav {
+    background: linear-gradient(135deg, #ffffff 0%, #f5eeff 100%); 
+    border: 1px solid rgba(255, 255, 255, 1);
+    /* Creates a beautiful outer glow around the active box */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 8px 15px rgba(45, 20, 60, 0.25); 
+    opacity: 1;
+    transform: translateY(-6px); /* Makes it pop up out of the dock */
+}
+
+
+/* --- OPEN WHEN ENVELOPES (3D Flip) --- */
+#envelope-grid {
+    display: grid;
+    /* Automatically creates a grid that fits 2 or 3 columns depending on the phone screen size */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 10px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.envelope-card {
+    background: transparent;
+    width: 100%;
+    height: 180px;
+    perspective: 1000px; /* Gives it the 3D depth */
+    cursor: pointer;
+}
+
+.envelope-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy flip */
+    transform-style: preserve-3d;
+}
+
+/* This triggers the flip when she taps it */
+.envelope-card.flipped .envelope-inner {
+    transform: rotateY(180deg);
+}
+
+.envelope-front, .envelope-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back when looking at the front */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* The Frosted Front */
+.envelope-front {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(45, 20, 60, 0.2);
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(45, 20, 60, 0.5);
+}
+
+.envelope-front h4 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.env-icon {
+    font-size: 45px;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}
+
+/* The Handwritten Back */
+.envelope-back {
+    transform: rotateY(180deg);
+    background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(240,230,255,0.95) 100%);
+    border: 1px solid rgba(255, 255, 255, 1);
+    box-shadow: inset 0 0 15px rgba(255,255,255,0.8), 0 10px 25px rgba(45, 20, 60, 0.3);
+    color: #3b2845;
+}
+
+.envelope-back p {
+    font-family: 'Baloo Da 2', sans-serif; /* Cute Bengali handwriting */
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+
+/* --- AMADER GOLPO (Memory Timeline) --- */
+.timeline-container {
+    position: relative;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 20px 10px 120px 10px; /* Extra bottom padding so it doesn't hide behind the navigation dock */
+}
+
+/* The Glowing Vertical Line */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(240,230,255,0.1));
+    top: 25px;
+    bottom: 120px;
+    left: 20px;
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 35px;
+    padding-left: 55px; /* Pushes the card over to make room for the line */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* The Glowing Starlight Dots */
+.timeline-dot {
+    position: absolute;
+    left: 14px; /* Centers the dot perfectly on the line */
+    top: 20px;
+    width: 16px;
+    height: 16px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 1), 0 0 25px rgba(200, 150, 255, 0.8);
+    z-index: 1;
+}
+
+/* Frosted Glass Timeline Cards */
+.timeline-content {
+    /* 🔥 Deep translucent purple frost to contrast the white text */
+    background: rgba(116, 73, 149, 0.55) !important; 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    color: #ffffff;
+    text-align: left;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateX(5px); 
+    background: rgba(45, 20, 65, 0.65) !important;
+}
+
+/* The Date Badge */
+.timeline-date {
+    display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fdfbfd;
+    background: rgba(45, 20, 60, 0.5);
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+/* Timeline Headers */
+.timeline-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(45, 20, 60, 0.6);
+}
+
+/* Timeline Bengali Text */
+.timeline-content p {
+    font-family: 'Baloo Da 2', sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    color: #ffffff !important; /* 🔥 Forces the text to be pure white */
+    font-weight: 500;
+}
+
+/* Timeline Images (If you choose to use them) */
+.timeline-img {
+    width: 100%;
+    border-radius: 12px;
+    margin-top: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- View Transitions --- */
+.view {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.view.active {
+    display: block;
+    opacity: 1;
+}
+
+/* --- PHOTO GALLERY (📸) --- */
+.gallery-grid {
+    display: grid;
+    /* Automatically fits as many photos as possible per row based on screen size */
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 18px;
+    padding: 10px 20px 120px 20px; /* Extra bottom padding so it doesn't hide behind the dock */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    background: rgba(35, 15, 50, 0.45); /* Deep twilight frost */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 12px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover; /* Ensures photos don't stretch or distort */
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.gallery-item:hover {
+    transform: scale(1.06) translateY(-5px); /* Pops up and zooms slightly */
+    background: rgba(45, 20, 65, 0.65);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.gallery-caption {
+    font-family: 'Baloo Da 2', sans-serif;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+
+
+/* --- ADVICE SECTION CATEGORY HEADERS --- */
+.advice-category-header {
+    background: linear-gradient(90deg, rgba(255,255,255,0.15) 0%, transparent 100%);
+    border-left: 4px solid #ffffff;
+    padding: 10px 15px;
+    margin: 40px 0 25px 0; /* Creates space between sections */
+    border-radius: 0 15px 15px 0;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: relative;
+    z-index: 2; /* Keeps the header above the timeline line */
+}
+
+.advice-category-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 5px rgba(45, 20, 60, 0.6);
+}
+
+/* Specific text styling for the advice card headers */
+.timeline-content h4 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #ffffff;
+    text-shadow: 1px 1px 4px rgba(45, 20, 60, 0.5);
+}
+
+
+
+/* =========================================
+   ADVICE SECTION (Maroon Theme & Fixes)
+   ========================================= */
+
+/* 1. The Maroon Page Background */
+#advice {
+    /* Covers the global twilight background with a deep, rich maroon */
+    background: radial-gradient(circle at top center, #5c1625 0%, #29060e 100%);
+    min-height: 100vh;
+    padding-top: 30px; 
+    box-sizing: border-box;
+    /* Adds a subtle padding at the bottom so the navigation dock doesn't cover content */
+    padding-bottom: 120px; 
+}
+
+#advice .advice-header-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* 2. Quranic Verses Styling */
+.quran-container {
+    max-width: 550px;
+    margin: 0 auto 40px auto;
+    padding: 0 20px;
+}
+
+.verse-block {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 180, 195, 0.2); /* Soft rose-gold border */
+    border-radius: 18px;
+    padding: 25px 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.arabic-text {
+    /* Uses system Arabic fonts for beautiful, classic rendering */
+    font-family: 'Amiri', 'Scheherazade', 'Traditional Arabic', serif;
+    font-size: 26px;
+    color: #ffecd2; /* Soft warm gold */
+    line-height: 1.6;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.bangla-text {
+    font-family: 'Baloo Da 2', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.verse-ref {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 13px;
+    color: #f497a9;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* 3. Fixing the Header Overlap */
+#advice .advice-category-header {
+    /* 🔥 Pushes the header past the timeline line! */
+    margin-left: 45px; 
+    border-left: 4px solid #f497a9; /* Soft rose gold line */
+    background: linear-gradient(90deg, rgba(255,180,195,0.15) 0%, transparent 100%);
+    padding: 10px 15px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    border-radius: 0 15px 15px 0;
+}
+
+#advice .advice-category-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0;
+}
+
+/* 4. Maroon-Tinted Timeline Elements */
+#advice .timeline-container::after {
+    /* Changes the glowing line to rose gold/maroon */
+    background: linear-gradient(to bottom, rgba(255,180,195,0.9), rgba(200,50,80,0.1));
+    box-shadow: 0 0 10px rgba(255, 150, 180, 0.5);
+}
+
+#advice .timeline-dot {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 100, 140, 0.8);
+}
+
+#advice .timeline-content {
+    /* Deep maroon glass frost */
+    background: rgba(60, 15, 25, 0.55) !important;
+    border: 1px solid rgba(255, 180, 195, 0.25);
+}
+
+#advice .timeline-content:hover {
+    background: rgba(80, 20, 35, 0.65) !important;
+}
+
+/* 5. Maroon Dedication Text */
+.maroon-dedication {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    color: #f497a9; /* Soft rose gold to match the borders */
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================================
+   GROWTH & FUTURE GARDEN (🌱)
+   ========================================= */
+
+.garden-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 30px;
+}
+
+
+/* --- THE VIRTUAL PLANT CENTERPIECE --- */
+.virtual-plant-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 45px;
+    position: relative;
+}
+
+/* The gently swaying plant */
+.virtual-plant-emoji {
+    font-size: 85px;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.4));
+    /* Creates the smooth, continuous rocking motion */
+    animation: gentleSway 4s ease-in-out infinite; 
+    transform-origin: bottom center; /* Anchors the pot so only the leaves sway */
+}
+
+/* The pulsating magical aura */
+.plant-glow {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(150, 255, 180, 0.4) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* The cute label underneath */
+.plant-label {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 13px;
+    color: #96ffb4; /* Soft emerald green */
+    margin-top: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* The sweet subtext under the timer */
+.plant-subtext {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 11px;
+    color: rgba(150, 255, 180, 0.75); /* A softer, slightly faded emerald */
+    margin-top: 5px;
+    font-style: italic;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* --- ANIMATIONS FOR THE PLANT --- */
+@keyframes gentleSway {
+    0%, 100% { transform: rotate(-6deg); }
+    50% { transform: rotate(6deg); }
+}
+
+@keyframes pulseGlow {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+    50% { transform: translate(-50%, -50%) scale(1.4); opacity: 0.2; }
+}
+
+
+.garden-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px 120px 20px; /* Padding for the dock */
+}
+
+
+
+.plant-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+}
+
+
+
+
+/* =========================================
+   OUR LOCATION TRACKER (📍) - GORGEOUS UPGRADE
+   ========================================= */
+
+.location-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 30px;
+}
+
+.location-action-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* Cinematic Multiple Radar Rings */
+.radar-ring {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(150, 200, 255, 0.4);
+    box-shadow: 0 0 20px rgba(150, 200, 255, 0.2);
+    z-index: 0;
+}
+
+.loop-1 { width: 140px; height: 140px; animation: radarRipple 3s infinite; }
+.loop-2 { width: 140px; height: 140px; animation: radarRipple 3s infinite 1.5s; }
+
+/* The Glassmorphism Glowing Button */
+.glowing-btn {
+    position: relative;
+    z-index: 1;
+    background: rgba(30, 50, 80, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(150, 220, 255, 0.6);
+    border-radius: 30px;
+    padding: 16px 35px;
+    color: #ffffff;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 0 15px rgba(150, 220, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+/* A glossy sweeping light effect on hover */
+.glowing-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: 0.5s;
+}
+
+.glowing-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(150, 220, 255, 0.5);
+    background: rgba(40, 70, 110, 0.6);
+}
+
+.glowing-btn:hover::before {
+    left: 100%;
+}
+
+.location-status {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 13px;
+    color: #9cd5ff;
+    margin-top: 30px;
+    letter-spacing: 1.5px;
+    font-style: italic;
+    text-shadow: 0 0 5px rgba(156, 213, 255, 0.3);
+}
+
+/* --- High-Tech Frosted Data Cards --- */
+.location-logs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 0 20px 120px 20px;
+}
+
+.log-card {
+    position: relative;
+    background-color: rgba(20, 15, 35, 0.6);
+    /* Subtle glowing map grid background! */
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+/* Inner atmospheric card glows */
+.card-glow {
+    position: absolute; top: -50px; left: -50px; width: 100px; height: 100px;
+    background: rgba(150, 200, 255, 0.3); filter: blur(50px); border-radius: 50%;
+}
+.card-glow-pink {
+    position: absolute; top: -50px; right: -50px; width: 100px; height: 100px;
+    background: rgba(255, 150, 180, 0.3); filter: blur(50px); border-radius: 50%;
+}
+
+.log-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 12px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 2;
+}
+
+.log-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 14px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    z-index: 2;
+}
+
+/* Highlight styling for a live, active location */
+.live-active {
+    border-color: rgba(150, 220, 255, 0.4);
+    box-shadow: inset 0 0 15px rgba(150, 220, 255, 0.1);
+}
+
+.log-time {
+    display: flex;
+    align-items: center;
+    color: #a4c9eb;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+/* The blinking neon live dot */
+.pulse-dot {
+    width: 8px; height: 8px;
+    background: #4deeea;
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 0 10px #4deeea;
+    animation: dotPulse 1.5s infinite;
+}
+
+.log-coords {
+    color: #e5dce8;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+/* --- New Cinematic Animations --- */
+@keyframes radarRipple {
+    0% { transform: translate(-50%, -50%) scale(0.8); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(2.5); opacity: 0; }
+}
+
+@keyframes dotPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(1.2); }
+}
+
+
+
+
+
+/* =========================================
+   AUTHENTICATION MODAL 🔒
+   ========================================= */
+
+.auth-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(10, 5, 15, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.auth-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.auth-card {
+    background: rgba(35, 15, 50, 0.85);
+    border: 1px solid rgba(255, 180, 195, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    width: 85%;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(255, 180, 195, 0.1);
+    transform: translateY(0);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.auth-overlay.hidden .auth-card {
+    transform: translateY(30px);
+}
+
+.auth-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.auth-card p {
+    font-family: 'Quicksand', sans-serif;
+    color: #e5dce8;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#secret-code-input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 12px;
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#secret-code-input:focus {
+    border-color: rgba(255, 180, 195, 0.8);
+    box-shadow: 0 0 10px rgba(255, 180, 195, 0.3);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.auth-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.auth-btn.cancel {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+.auth-btn.cancel:hover { background: rgba(255, 255, 255, 0.2); }
+
+.auth-btn.unlock {
+    background: linear-gradient(135deg, #f497a9, #c83250);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(200, 50, 80, 0.4);
+}
+.auth-btn.unlock:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(200, 50, 80, 0.6); }
+
+#auth-error {
+    color: #ff6b6b;
+    font-size: 13px;
+    margin-top: 15px;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   FLOATING LOGOUT / SECURITY BUTTON 🔒
+   ========================================= */
+
+.floating-logout-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(35, 15, 50, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 180, 195, 0.4);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 1;
+}
+
+.floating-logout-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.5);
+}
+
+.floating-logout-btn:hover {
+    background: rgba(200, 50, 80, 0.6); /* Turns red on hover to indicate locking/logging out */
+    transform: scale(1.1);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+
+/* =========================================
+   LIVE PHOTO GALLERY 📸
+   ========================================= */
+   
+#gallery {
+    height: 100vh; /* Locks the entire section to exactly the screen height */
+    padding: 30px 20px 100px 20px; /* 100px bottom padding leaves perfect room for the dock */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* This physically disables the main background from scrolling! */
+}
+
+.gallery-header {
+    text-align: center;
+    flex-shrink: 0; /* Protects the header from getting squished */
+    margin-bottom: 15px;
+}
+
+.gallery-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 28px;
+    margin-bottom: 5px;
+    text-shadow: 0 2px 10px rgba(255, 180, 195, 0.4);
+}
+
+.gallery-header p {
+    color: #e5dce8;
+    margin-bottom: 15px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* The beautiful glowing upload button */
+.action-btn {
+    background: linear-gradient(135deg, #2a1b38, #402552);
+    border: 1px solid rgba(255, 180, 195, 0.4);
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 5px;
+}
+
+.action-btn:hover {
+    background: linear-gradient(135deg, #f497a9, #c83250);
+    box-shadow: 0 6px 20px rgba(200, 50, 80, 0.5);
+    transform: translateY(-2px);
+}
+
+.status-text {
+    color: #f497a9;
+    font-size: 14px;
+    margin-top: 15px;
+    font-weight: bold;
+    animation: pulse 1.5s infinite;
+}
+
+/* The Scrollable Chat Box (Full Screen Width Upgrade) */
+#photo-gallery-grid {
+    flex-grow: 1; 
+    width: 100%;
+    max-width: 100%; /* 🚀 Changed from 480px to 100% to fill the whole screen! */
+    margin: 0; 
+    
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 25px;
+    
+    overflow-y: auto; 
+    background: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.08); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1); 
+}
+
+/* Hide scrollbar for a cleaner look */
+#photo-gallery-grid::-webkit-scrollbar {
+    width: 4px;
+}
+#photo-gallery-grid::-webkit-scrollbar-thumb {
+    background: rgba(255, 180, 195, 0.3);
+    border-radius: 10px;
+}
+/* Beautifully centered empty state */
+.empty-gallery-msg {
+    margin: auto; /* Pushes the text to the absolute dead-center of the box */
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    font-size: 15px;
+    padding: 20px;
+}
+
+/* Individual Chat Row */
+.chat-message {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    width: 100%;
+    animation: textFadeIn 0.4s ease-out;
+}
+
+/* Logic: "Me" goes to the right, "Them" stays on the left */
+.chat-message.chat-me {
+    flex-direction: row-reverse;
+}
+
+/* The Mini Icons */
+.chat-avatar {
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 180, 195, 0.4);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* The Photo Bubble */
+.chat-photo-bubble {
+    /* 🚀 Forces the bubble to never be wider than 50% of the screen */
+    /* This guarantees it will clearly align to the left or right! */
+    max-width: 50%; 
+    background: rgba(255, 255, 255, 0.05);
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 180, 195, 0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Give your bubbles a different tint than hers! */
+.chat-me .chat-photo-bubble {
+    background: linear-gradient(135deg, rgba(64, 37, 82, 0.8), rgba(42, 27, 56, 0.8));
+    border-bottom-right-radius: 5px; 
+}
+
+.chat-them .chat-photo-bubble {
+    background: linear-gradient(135deg, rgba(244, 151, 169, 0.15), rgba(200, 50, 80, 0.15));
+    border-bottom-left-radius: 5px;
+}
+
+.chat-photo-bubble img {
+    width: 100%;
+    max-height: 400px; /* 🚀 Prevents extremely tall photos from taking over the screen */
+    object-fit: contain; /* Keeps the whole image visible without cutting it off */
+    border-radius: 12px;
+    display: block;
+}
+
+/* Timestamp underneath the photo */
+.chat-timestamp {
+    display: block;
+    text-align: right;
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 6px;
+    padding-right: 5px;
+}
+
+
+/* =========================================
+   THE LONG LETTER (Moner Kotha) 💌
+   ========================================= */
+#letter {
+    padding: 40px 20px 120px 20px; /* Added bottom padding so the nav bar doesn't hide your text */
+    display: flex;
+    flex-direction: column; /* 🚀 This is the magic line! It forces the title and paper to stack vertically */
+    align-items: center; /* This perfectly centers the title above the paper */
+    overflow-y: auto; /* Allows you to scroll if the letter gets long */
+}
+
+.letter-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 180, 195, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 100px; /* Leaves room for the bottom navigation bar */
+    text-align: left;
+}
+
+.letter-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(255, 180, 195, 0.4);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.letter-content p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #e5dce8;
+}
+
+.letter-signature {
+    text-align: right;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 20px;
+    color: #f497a9;
+    margin-top: 30px;
+}
+
+
+/* =========================================
+   OUR GARDEN (Future Plans) 🌱
+   ========================================= */
+#growth {
+    padding: 60px 20px 120px 20px; /* The 120px bottom padding ensures cards clear the dock! */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+/* Keeps the header and plant perfectly centered */
+.garden-header, .virtual-plant-container {
+    text-align: center;
+    flex-shrink: 0;
+    margin-bottom: 25px;
+}
+
+/* The Aesthetic Grid Layout */
+.garden-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 650px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+/* The Inner Wrapper that actually spins */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy spin */
+    transform-style: preserve-3d;
+}
+
+
+
+/* Front and Back Faces */
+.card-front, .card-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 180, 195, 0.15);
+    border-radius: 25px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+/* Front stays normally positioned to give the card its height */
+.card-front {
+    position: relative;
+    z-index: 2;
+    transform: rotateY(0deg); /* 🚀 Added this to fix Safari/Mobile bugs! */
+}
+
+/* Back is hidden behind the front and rotated */
+.card-back {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    transform: rotateY(180deg);
+    background: rgba(255, 180, 195, 0.1); /* Slightly warmer tint for the secret message */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hidden-msg {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #f497a9;
+    font-size: 20px;
+    line-height: 1.5;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Glowing magical bar at the top of both sides */
+.card-front::before, .card-back::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f497a9, #a8e6cf);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+
+.plant-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+    display: inline-block;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+}
+
+
+
+@media (max-width: 550px) {
+    .garden-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   3D FLIPPING CARDS 🌱
+   ========================================= */
+
+/* 1. The Invisible Outer Wrapper (Forces old styles off!) */
+.garden-card {
+    background: transparent !important; 
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    perspective: 1000px; 
+    cursor: pointer;
+}
+
+/* 2. The Inner Wrapper (The part that actually spins) */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+/* 3. THE MAGIC TRIGGER (Flips on hover or mobile tap. No JS needed!) */
+.garden-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* 4. The Front & Back Faces (The Glass Design) */
+.card-front, .card-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 180, 195, 0.15);
+    border-radius: 25px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+}
+
+/* 5. The Front Face Details */
+.card-front {
+    position: relative;
+    z-index: 2;
+    transform: rotateY(0deg); /* Fixes Apple/Safari bugs */
+}
+
+/* 6. The Back Face Details */
+.card-back {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    transform: rotateY(180deg);
+    
+    /* Solid background so the front text doesn't bleed through! */
+    background: linear-gradient(135deg, #402552, #2a1b38); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hidden-msg {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #f497a9;
+    font-size: 20px;
+    line-height: 1.5;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Glowing magical bar at the top */
+.card-front::before, .card-back::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #f497a9, #a8e6cf);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.garden-card:hover .card-front::before,
+.garden-card:hover .card-back::before {
+    opacity: 1;
+}
+
+/* =========================================
+   GARDEN CARD TYPOGRAPHY ✨
+   ========================================= */
+
+.plant-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+    display: inline-block;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.3));
+}
+
+.garden-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #ffffff;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.4);
+}
+
+.garden-card p {
+    font-family: 'Quicksand', sans-serif;
+    color: #e5dce8;
+    font-size: 14.5px;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+
+
+/* =========================================
+   LIVE CONNECTION PROPOSAL 💍
+   ========================================= */
+
+/* The "Marry me?" button dropped down right above the navigation bar */
+.proposal-trigger-container {
+    position: absolute;
+    left: 3%;
+    bottom: 3% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    z-index: 10;
+}
+
+
+.cute-circle-btn {
+    width: clamp(45px, 5vw, 60px);
+    height: clamp(45px, 5vw, 60px);
+    border-radius: 50%;
+    border: 2px solid rgba(255, 180, 195, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    font-size: clamp(20px, 2.5vw, 28px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.cute-circle-btn:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.prompt-speech-bubble {
+    background: rgba(255, 255, 255, 0.95);
+    color: #402552;
+    padding: clamp(6px, 1vw, 8px) clamp(10px, 1.5vw, 15px);
+    border-radius: 20px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: clamp(11px, 1.5vw, 14px);
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    white-space: nowrap; /* Keeps "Marry me?" cleanly on a single line */
+}
+
+/* The Arrow pointing UP at the button */
+.arrow-up::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent rgba(255, 255, 255, 0.95) transparent;
+}
+
+/* --- THE POPUP LETTER WINDOW --- */
+.letter-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.letter-overlay:not(.hidden) {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.letter-overlay.hidden {
+    display: none; 
+}
+
+.letter-paper {
+    background: #fffcf9;
+    width: 85%;
+    max-width: 450px;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    position: relative;
+    text-align: center;
+    transform: translateY(30px);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.letter-overlay:not(.hidden) .letter-paper {
+    transform: translateY(0);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #a0a0a0;
+    cursor: pointer;
+}
+
+.letter-title {
+    font-family: 'Playfair Display', serif;
+    color: #c83250;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.letter-body {
+    font-family: 'Quicksand', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* --- THE LIVE SYNC AREA (Inside Letter) --- */
+.live-action-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.04);
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 25px;
+    gap: 25px; 
+}
+
+.sync-btn {
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Dynamic Firebase Colors */
+.btn-red { background: #c83250; }
+.btn-yellow { background: #f1c40f; color: #333; }
+.btn-green { background: #27ae60; }
+
+.color-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-align: left;
+}
+
+.color-legend p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 13px;
+    color: #444;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+}
+.dot-red { background: #c83250; }
+.dot-yellow { background: #f1c40f; }
+.dot-green { background: #27ae60; }
+
+
+/* =========================================
+   THE SUPERSIZED LAYOUT & NARROW CARD FIX 🚀
+   ========================================= */
+   
+/* 1. Push text to the top and stop it from centering everything */
+#reasons.active {
+    position: relative !important;
+    height: 100vh !important;
+    margin: -30px -20px 0 -20px !important; 
+    padding-top: 50px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important; 
+    overflow: hidden !important;
+}
+
+#reasons h2 {
+    margin-top: 10px !important;
+    z-index: 10 !important;
+}
+
+/* 2. The Reason Card - Narrower horizontally, Taller vertically */
+.reason-card {
+    margin-top: 10px !important;
+    /* Squished inward horizontally so GIFs have plenty of room */
+    width: clamp(200px, 35vw, 320px) !important; 
+    /* Stretched vertically */
+    min-height: 200px !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    z-index: 10 !important;
+    padding: 30px 20px !important; 
+}
+
+#reason-btn {
+    margin-top: 20px !important;
+    z-index: 10 !important;
+}
+
+/* 3. Lift the Boy Wrapper higher to align with the girl */
+.boy-wrapper {
+    position: absolute !important;
+    left: -12% !important; /* Keeping your preferred left position */
+    bottom: 200px !important; /* 🚀 Lifted up from 130px so he matches her height perfectly */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    z-index: 20 !important;
+    width: auto !important; 
+}
+
+/* 4. Boy Image - Cleaned up to wrap perfectly */
+.boy-wrapper img.avatar.boy-avatar {
+    position: relative !important;
+    width: clamp(450px, 55vw, 850px) !important; 
+    min-width: 450px !important; 
+    max-width: none !important; 
+    height: auto !important;
+    margin-bottom: 0 !important; /* Reset so the box is clean */
+    transform: none !important;
+    display: block !important;
+}
+
+/* 5. Ring Button - Adjusted to sit cleanly under his cut-off */
+.boy-wrapper .proposal-trigger-container {
+    position: absolute !important; 
+    bottom: -15px !important; /* 🚀 Pulled down slightly so it doesn't overlap his shirt as much */
+    left: 38% !important; 
+    transform: translateX(-50%) scale(1.1) !important; 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 4px !important;
+    margin: 0 !important;
+    z-index: 30 !important;
+}
+
+/* 6. Push the Girl far right and make her MATCH 🚀 */
+img.avatar.girl-avatar {
+    position: absolute !important;
+    right: -10% !important; 
+    bottom: 230px !important; /* 🚀 Lifted to align her feet perfectly with his */
+    /* Matches his massive new scale */
+    width: clamp(450px, 55vw, 850px) !important; 
+    min-width: 450px !important; /* 🔥 FORCES it to be undeniably huge */
+    max-width: none !important; 
+    height: auto !important;
+    z-index: 20 !important;
+    transform: none !important;
+    display: block !important;
+}
+
+/* =========================================
+   THE SECURITY MODAL Z-INDEX FIX 🔒
+   ========================================= */
+.auth-overlay {
+    z-index: 99999 !important; /* Forces the lock to sit in front of the letter window! */
+}
+
+
+/* =========================================
+   THE "PIN TO TOP" VIEW FIX 🚀
+   ========================================= */
+
+/* Rip the broken sections out of the trap and pin them to the very top! */
+#growth.active, #advice.active, #letter.active {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    overflow-y: auto !important; /* Keeps them perfectly scrollable */
+    box-sizing: border-box !important;
+    z-index: 15 !important; /* Stays below the nav dock but above the background */
+}
+
+/* 1. Garden Layout */
+#growth.active {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: 60px 20px 150px 20px !important; /* Re-adds safe spacing */
+}
+
+/* 2. Letter Layout (Moner Kotha) - Scroll Fix 📜 */
+#letter.active {
+    display: block !important; /* 🚀 Kills the Flexbox bug that was trapping the scroll! */
+    text-align: center !important; /* Keeps the title centered */
+    padding: 60px 20px 150px 20px !important;
+    overflow-y: auto !important; /* Forces the scrollbar to appear */
+    -webkit-overflow-scrolling: touch !important; /* Smooth scrolling for mobile phones */
+}
+
+/* Centers the actual paper inside the block and makes it RESPONSIVE */
+#letter.active .letter-container,
+#letter.active .scrapbook-style {
+    margin: 0 auto !important; 
+    height: auto !important; 
+    text-align: left !important; 
+    
+    /* 🚀 The Magic Rubber Band Width! */
+    /* Starts at 300px on tiny screens, stretches to take up 85% of the window, and stops growing at 800px so it remains readable */
+    width: clamp(300px, 85vw, 800px) !important; 
+    max-width: none !important; /* 🔥 Destroys the old constraint that was keeping it narrow */
+    box-sizing: border-box !important;
+}
+/* 3. Advice Layout (Forces the Maroon background to fill the screen) */
+#advice.active {
+    display: block !important; /* Timeline needs block layout */
+    padding: 60px 20px 150px 20px !important;
+    background: radial-gradient(circle at top center, #5c1625 0%, #29060e 100%) !important;
+}
+
+
+/* =========================================
+   THE SURGICAL CENTER LIFT FIX 🚀 (Updated)
+   ========================================= */
+
+/* 0. Reset all previous lifts to stop the "double-jumping" glitch */
+#reasons h2,
+#reasons h3,
+#reasons p,
+.reason-container,
+.glass-card,
+.reason-box,
+#reason-btn,
+#reason-text {
+    transform: none !important;
+}
+
+/* 1. Title Fix - Pushes it down so it is NO LONGER cropped */
+#reasons h2 {
+    margin-top: 0px !important; 
+    position: relative !important;
+    z-index: 50 !important;
+}
+
+/* 2. Frosted Box & Glass Background - Wider, Shorter, and slightly lifted together */
+.reason-container,
+.glass-card,
+.reason-box {
+    transform: translateY(-10px) !important; /* Lifts the actual frosted glass background */
+    width: 85vw !important; /* 🚀 Makes the glass wider */
+    max-width: 350px !important; 
+    min-height: 120px !important; /* 🚀 Decreases the height */
+    height: 155px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px !important;
+    position: relative !important;
+    z-index: 50 !important;
+    margin: 0 auto !important; /* Keeps it dead center on the screen */
+}
+
+/* 3. Text inside the box - Keeps it perfectly centered */
+#reason-text {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 4. CLICK ME Button - Strong lift to clear the GIFs */
+#reason-btn {
+    transform: translateY(-25px) !important; /* 🚀 Pulls just the button up heavily above their hands! */
+    position: relative !important;
+    z-index: 50 !important;
+}

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You 💖</title>
+    <!-- Fonts: Quicksand (Body), Baloo/Galada (Bengali), and Playfair Display (Fancy Headers) -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Baloo+Da+2:wght@500;600;700&family=Galada&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main id="app-content">
+        
+        <!-- 1. Our Location Section -->
+        <section id="location" class="view hidden">
+            
+            <div class="location-header">
+                <h2>Our Coordinates 📍</h2>
+                <p class="subtitle">Always finding our way back to each other...</p>
+            </div>
+
+            <!-- The Action Area -->
+            <div class="location-action-area">
+                <!-- Dual radar rings for a cinematic pulse -->
+                <div class="radar-ring loop-1"></div>
+                <div class="radar-ring loop-2"></div>
+                <button id="share-location-btn" class="glowing-btn">
+                    <span class="btn-text">SHARE LIVE LOCATION 📡</span>
+                </button>
+                <p class="location-status">System ready. Waiting for GPS signal...</p>
+            </div>
+
+            <!-- The History Logs -->
+            <div class="location-logs-container">
+                
+                <!-- Rafi's Log (Top Box) -->
+                <div class="log-card">
+                    <div class="card-glow"></div>
+                    <h3 id="rafi-tracker-title">Rafi's Tracker 🛰️</h3>
+                    <div class="log-list" id="rafi-location-log">
+                        <div class="log-item">
+                            <span class="log-time">--:--</span>
+                            <span class="log-coords">Waiting for update...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ruhi's Log (Bottom Box) -->
+                <div class="log-card">
+                    <div class="card-glow-pink"></div>
+                    <h3 id="ruhi-tracker-title">Ruhi's Tracker 🛰️</h3>
+                    <div class="log-list" id="ruhi-location-log">
+                        <div class="log-item">
+                            <span class="log-time">--:--</span>
+                            <span class="log-coords">Waiting for update...</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            </div>
+        </section>
+
+        <!-- 2. Open When -->
+        <section id="open-when" class="view hidden">
+            <div class="homepage-bg"></div>
+
+            <h2>Open When... 💌</h2>
+            <p class="subtitle">A little something for every mood</p>
+            
+            <div id="envelope-grid">
+                
+                <!-- ENVELOPE 1 -->
+                <div class="envelope-card" id="env-miss">
+                    <div class="envelope-inner">
+                        <div class="envelope-front">
+                            <span class="env-icon">🥺</span>
+                            <h4>You miss me</h4>
+                        </div>
+                        <div class="envelope-back">
+                            <p class="back-message"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ENVELOPE 2 -->
+                <div class="envelope-card" id="env-sad">
+                    <div class="envelope-inner">
+                        <div class="envelope-front">
+                            <span class="env-icon">😔</span>
+                            <h4>You feel sad</h4>
+                        </div>
+                        <div class="envelope-back">
+                            <p class="back-message"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ENVELOPE 3 -->
+                <div class="envelope-card" id="env-mad">
+                    <div class="envelope-inner">
+                        <div class="envelope-front">
+                            <span class="env-icon">😡</span>
+                            <h4>You are mad at me</h4>
+                        </div>
+                        <div class="envelope-back">
+                            <p class="back-message"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ENVELOPE 4 -->
+                <div class="envelope-card" id="env-sleep">
+                    <div class="envelope-inner">
+                        <div class="envelope-front">
+                            <span class="env-icon">🥱</span>
+                            <h4>You can't sleep</h4>
+                        </div>
+                        <div class="envelope-back">
+                            <p class="back-message"></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. Timeline -->
+        <section id="timeline" class="view hidden">
+            <!-- Keeps the beautiful twilight background -->
+            <div class="homepage-bg"></div>
+
+            <h2>Amader Golpo 📖</h2>
+            <p class="subtitle">How it's going so far...</p>
+            
+            <div class="timeline-container">
+                
+                <!-- MEMORY 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">The Beginning ✨</span>
+                        <h3>প্রথম দেখা</h3>
+                        <p>সেদিন ভাবিনি তুমি আমার জীবনের এতোটা জুড়ে থাকবে। সবকিছু যেন স্বপ্নের মতো ছিল।</p>
+                        <!-- To use an image, uncomment the line below and add your file! -->
+                        <img src="ss1.png" alt="Our first memory" class="timeline-img">
+                    </div>
+                </div>
+
+                <!-- MEMORY 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Late Night Talks 🌙</span>
+                        <h3>প্রথম রাতের কথা</h3>
+                        <p>ঘড়ির কাঁটা পার হচ্ছিল, কিন্তু আমাদের কথা শেষ হচ্ছিল না। সেই রাতটা আমি কখনো ভুলব না।</p>
+                    </div>
+                </div>
+
+                <!-- MEMORY 3 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Special Day 🌸</span>
+                        <h3>সবচেয়ে সুন্দর মুহূর্ত</h3>
+                        <p>তোমার ওই হাসিটা দেখার জন্য আমি যেকোনো কিছু করতে পারি। This is just the beginning of our story...</p>
+                        <!-- <img src="memory2.jpg" alt="A special day" class="timeline-img"> -->
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+    <!-- 4. Reasons Generator -->
+    <section id="reasons" class="view active">
+        
+        <!-- THE NEW HOMEPAGE BACKGROUND -->
+        <div class="homepage-bg"></div>
+        
+        <h2>Keno Tomake Etto Bhalo Lage ✨</h2>
+        <p class="subtitle">(Reasons I like you)</p>
+        <div id="heart-container"></div>
+        
+        <!-- 1. THE BOY AVATAR & PROPOSAL BUTTON WRAPPER -->
+        <div class="boy-wrapper">
+            <img src="boy.gif" alt="Shaon" class="avatar boy-avatar">
+            
+            <div class="proposal-trigger-container">
+                <button id="open-proposal-btn" class="cute-circle-btn">💍</button>
+                <div class="prompt-speech-bubble arrow-up">Marry me?</div>
+            </div>
+        </div>
+
+        <!-- THE GIRL AVATAR -->
+        <img src="girl.gif" alt="Princess" class="avatar girl-avatar">
+        
+        <div class="glass-card reason-card">
+            <p id="reason-text">Tap the button to find out...</p>
+        </div>
+        
+        <button id="reason-btn" class="cute-btn">Click Me 💖</button>
+    </section>
+
+        <!-- ========================================= -->
+        <!-- LIVE PHOTO GALLERY (Chat Style) -->
+        <!-- ========================================= -->
+        <section id="gallery" class="view hidden">
+            
+            <div class="gallery-header">
+                <h2>Moments to Share With You ✨</h2>
+                <p>Little glimpses of my day...</p>
+                
+                <!-- The Upload Button (Now a Label for 100% iOS/Android support!) -->
+                <label for="photo-input" id="upload-photo-btn" class="action-btn" style="display: inline-block;">Share a Moment 📸</label>
+                
+                <!-- Hidden file input -->
+                <input type="file" id="photo-input" accept="image/*" style="display: none;">
+                <p id="upload-status" class="status-text hidden">Uploading... Please wait ⏳</p>
+            </div>
+
+            <!-- The Chat Feed where photos will magically appear -->
+            <div id="photo-gallery-grid" class="photo-grid">
+                <!-- Example Placeholder (will be replaced by live photos) -->
+                <div class="empty-gallery-msg">No moments yet. Be the first to share one! 🌸</div>
+            </div>
+            
+        </section>
+
+        <!-- 7. Growth & Future Section -->
+        <section id="growth" class="view hidden">
+            
+            <div class="garden-header">
+                <h2>Our Garden 🌱</h2>
+                <p class="subtitle">Watching our dreams grow...</p>
+            </div>
+
+            <!-- NEW: The Virtual Plant Centerpiece -->
+            <div class="virtual-plant-container">
+                <div class="plant-glow"></div>
+                <!-- You can replace this emoji with an <img src="plant.gif"> later if you want! -->
+                <div class="virtual-plant-emoji">🪴</div>
+                <p class="plant-label" id="plant-timer">Growing since Day 1</p>
+                <p class="plant-subtext">(Since the day we met online)</p>
+            </div>
+            
+            <div class="garden-grid">
+                
+                <!-- Future Goal 1 -->
+                <div class="garden-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="plant-icon">🎓</div>
+                            <h3>Graduation Day</h3>
+                            <p>I can't wait to celebrate together when I finally finish my RUET degree. Having you by my side will make it perfect.</p>
+                        </div>
+                        <div class="card-back">
+                            <p class="hidden-msg">"I'll be the loudest one cheering for you in the crowd. Promise. 🥺❤️"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Goal 2 -->
+                <div class="garden-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="plant-icon">📚</div>
+                            <h3>The BCS Journey</h3>
+                            <p>Knowing you are cheering me on makes all the late-night study sessions and exam prep completely worth it.</p>
+                        </div>
+                        <div class="card-back">
+                            <p class="hidden-msg">"No matter how hard the journey gets, I am always your safe place to rest. ✨"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Goal 3 -->
+                <div class="garden-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="plant-icon">✈️</div>
+                            <h3>Our First Trip</h3>
+                            <p>Planting the seed for our first big adventure together. I want to see the world with you.</p>
+                        </div>
+                        <div class="card-back">
+                            <p class="hidden-msg">"I don't care where we go, as long as my hand is in yours. 🌍💕"</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Goal 4 -->
+                <div class="garden-card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <div class="plant-icon">🏡</div>
+                            <h3>A Place of Our Own</h3>
+                            <p>Building a future where we never have to say goodbye at the end of the day.</p>
+                        </div>
+                        <div class="card-back">
+                            <p class="hidden-msg">"Home isn't a place for me anymore... it's wherever you are. 🏡💞"</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 7. The Long Letter -->
+        <section id="letter" class="view hidden">
+            <h2>Moner Kotha 📜</h2>
+            
+            <div class="letter-paper scrapbook-style">
+                <!-- Washi Tape Decorations -->
+                <div class="washi-tape tape-top-left"></div>
+                <div class="washi-tape tape-top-right"></div>
+                
+                <!-- Cursive Header -->
+                <h3 class="cursive-header">Love,</h3>
+                
+                <p class="greeting">প্রিয় Ruhi 🌸,</p>
+                
+                <p>এখানে তোমার মনের সব কথা লিখতে পারো। এই ফন্টটা দেখতে একদম হাতে লেখা কিউট ডায়েরির মতো লাগবে। 🎀</p>
+                
+                <p>তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি। তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি। তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি। 🥺💖</p>
+
+                <p>তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি। তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি। তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি। 🥺💖</p><p>তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি। তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি। তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি।তুমি যত খুশি প্যারাগ্রাফ লিখতে পারো, পড়তে কোনো অসুবিধা হবে না। আমি তোমার জন্য এই ছোট্ট পৃথিবীটা বানিয়েছি। 🥺💖</p>
+
+                <!-- POLAROID SCREENSHOT -->
+                <div class="polaroid-wrapper">
+                    <div class="polaroid">
+                        <!-- Make sure you have a real image named chat1.jpg in your folder! -->
+                        <img src="ss1.png" alt="Our chat memory">
+                        <div class="polaroid-caption">প্রথম দিনের কথা ✨</div>
+                    </div>
+                </div>
+
+                <p>এভাবেই আমাদের প্রতিটা সুন্দর মুহূর্ত আমি এখানে সাজিয়ে রাখতে চাই। 🦋</p>
+                
+                <p class="sign-off">ইতি,<br>Rafi ❤️</p>
+            </div>
+        </section>
+
+
+        <!-- 6. Advice Section -->
+        <section id="advice" class="view hidden">
+            
+            <div class="advice-header-container">
+                <h2>Guiding Lights 💡</h2>
+                <p class="subtitle">Little reminders for you...</p>
+            </div>
+
+            <!-- Quranic Verses Section -->
+            <div class="quran-container">
+                
+                <div class="verse-block">
+                    <p class="arabic-text">فَمَن يُرِدِ اللَّهُ أَن يَهْدِيَهُ يَشْرَحْ صَدْرَهُ لِلْإِسْلَامِ</p>
+                    <p class="bangla-text">"সুতরাং যাকে আল্লাহ হিদায়াত করতে চান, ইসলামের জন্য তার বুক উন্মুক্ত করে দেন।"</p>
+                    <p class="verse-ref">— Surah Al-An'am (6:125)</p>
+                </div>
+
+                <div class="verse-block">
+                    <p class="arabic-text">إِنَّكَ لَا تَهْدِي مَنْ أَحْبَبْتَ وَلَٰكِنَّ اللَّهَ يَهْدِي مَن يَشَاءُ ۚ وَهُوَ أَعْلَمُ بِالْمُهْتَدِينَ</p>
+                    <p class="bangla-text">"তুমি যাকে ভালবাস, ইচ্ছা করলেই তাকে সৎ পথে আনতে পারবেনা। তবে আল্লাহ যাকে ইচ্ছা সৎ পথে আনেন এবং তিনিই ভাল জানেন কারা সৎ পথ অনুসরণকারী।"</p>
+                    <p class="verse-ref">— Surah Al-Qasas (28:56)</p>
+                </div>
+
+                <div class="verse-block">
+                    <p class="arabic-text">إِنَّ الَّذِينَ آمَنُوا وَعَمِلُوا الصَّالِحَاتِ يَهْدِيهِمْ رَبُّهُم بِإِيمَانِهِمْ</p>
+                    <p class="bangla-text">"নিশ্চয় যারা ঈমান আনে এবং নেক আমল করে, তাদের রব ঈমানের কারণে তাদেরকে পথ দেখাবেন, আরামদায়ক জান্নাতসমূহে যার তলদেশে নহরসমূহ প্রবাহিত।"</p>
+                    <p class="verse-ref">— Surah Yunus (10:9)</p>
+                </div>
+
+            </div>
+
+            <!-- NEW: The Maroon Dedication -->
+            <p class="maroon-dedication">যেহেতু তোমার মেরুন রঙ অনেক প্রিয় তাই এই বিশেষ অংশটুকুতে মেরুন রঙ ব্যবহার করেছি 🌹</p>
+            
+            <div class="timeline-container">
+                
+                <!-- CATEGORY 1 -->
+                <div class="advice-category-header">
+                    <h3>Career & Goals 📚</h3>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>One step at a time</h4>
+                        <p>Don't look at the whole staircase right now. Just focus on the very next step in front of you. You are smarter and more capable than you realize.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>It's okay to fail</h4>
+                        <p>Failure isn't the opposite of success, it's part of it. I'm proud of you no matter the outcome.</p>
+                    </div>
+                </div>
+
+                <!-- CATEGORY 2 -->
+                <div class="advice-category-header">
+                    <h3>When You're Stressed 🌧️</h3>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Take a breath</h4>
+                        <p>Close your eyes, take a deep breath, and remember that this moment will pass. আমি সব সময় তোমার পাশে আছি।</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4>Call me</h4>
+                        <p>If everything feels too heavy, drop whatever you are doing and call me. We will figure it out together. ❤️</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    
+        <!-- Floating Security Lock (Hidden until logged in) -->
+        <button id="logout-btn" class="floating-logout-btn hidden" title="Lock App">🔒</button>
+
+        <!-- The Secret Authentication Modal -->
+        <div id="auth-modal" class="auth-overlay hidden">
+            <div class="auth-card">
+                <h3>Identity Required 🌸</h3>
+                <p>This action is just for the two of us. Enter your secret code to unlock it.</p>
+                
+                <div class="auth-input-group">
+                    <input type="password" id="secret-code-input" placeholder="Enter code..." autocomplete="off">
+                </div>
+                
+                <div class="auth-buttons">
+                    <button id="auth-cancel-btn" class="auth-btn cancel">Cancel</button>
+                    <button id="auth-unlock-btn" class="auth-btn unlock">Unlock ✨</button>
+                </div>
+                <p id="auth-error" class="hidden">Incorrect code. Try again.</p>
+            </div>
+        </div>
+
+        <!-- The Secret Proposal Letter Modal -->
+        <div id="proposal-letter-modal" class="letter-overlay hidden">
+            <div class="letter-paper">
+                <button id="close-proposal-btn" class="close-btn">✖</button>
+                
+                <h2 class="letter-title">My Dearest Ruhi... 🌸</h2>
+                <p class="letter-body">
+                    From the very first day, you became my favorite notification, my favorite smile, and my favorite part of the day.<br><br>
+                    I don't just want to track our locations; I want to share the same location. Forever. I want to build a future where we never have to say goodbye at the end of the day.<br><br>
+                    Will you be mine? ❤️
+                </p>
+                
+                <!-- The Live Sync Action Area (Button + Legend) -->
+                <div class="live-action-area">
+                    <button id="connect-btn" class="sync-btn btn-red">I Do 💍</button>
+                    
+                    <!-- The Color Legend on the Right -->
+                    <div class="color-legend">
+                        <p><span class="dot dot-red"></span> Not clicked yet</p>
+                        <p><span class="dot dot-yellow"></span> Waiting for you...</p>
+                        <p><span class="dot dot-green"></span> Forever Connected ✨</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        
+
+    </main>
+
+    <!-- Updated Nav with 7 icons -->
+    <nav id="bottom-nav">
+        <!-- Navigation Buttons -->
+            <button class="nav-btn" data-target="location">📍</button>
+            <button class="nav-btn" data-target="open-when">💌</button>
+            <button class="nav-btn" data-target="timeline">📖</button>
+            
+            <!-- The Homepage Button (Set as active by default) -->
+            <button class="nav-btn active-nav" data-target="reasons">✨</button>
+            
+            <button class="nav-btn" data-target="gallery">📸</button>
+            <button class="nav-btn" data-target="growth">🌱</button>
+            <button class="nav-btn" data-target="letter">📜</button>
+            <button class="nav-btn" data-target="advice">💡</button>
+    </nav>
+    <!-- Firebase App & Realtime Database Compat SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
+    
+    <!-- Your Main Script -->
+    <script src="script.js"></script>
+</body>
+</html>
