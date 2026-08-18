@@ -160,13 +160,15 @@ if(logoutBtn) {
 // 3. UI FEATURES (Hearts, Envelopes, Timer)
 // =========================================
 const reasons = [
-    "Your smile absolutely melts my heart.",
+    "Tumhari masoomiyat🥹",
     "The way you talk about the things you love.",
     "Because you make my days 100x better.",
-    "You have the most beautiful eyes.",
+    "Tumhari bachpana🥹",
     "Because every time I see your message, I smile.",
-    "Toke dekhe amar mon bhalo hoye jay.", 
-    "Because you are effortlessly perfect to me."
+    "The way u care for others🫠", 
+    "তোমাকে বুঝালে বুঝো🙂",
+    "তুমি আমার সাথে একবারও তর্ক করো নি😇",
+    "Tumhari soch🥹🫡"
 ];
 
 const reasonBtn = document.getElementById('reason-btn');
@@ -207,11 +209,15 @@ const envelopeMessages = {
         "Close your eyes, I'm right there with you! ❤️"
     ],
     'env-sad': [
-        "মন খারাপ করো না। তোমার ওই সুন্দর হাসিমুখটা আমার সারাদিনের শান্তি। 🌸",
+        "তোমার রব তোমাকে পরিত্যাগ করেননি এবং অসন্তুষ্টও হননি। (surah Ad-Duha 3)🌸",
+        "And whoever relies upon Allah - then He is sufficient for him",
+        "নিশ্চয় কষ্টের সাথেই রয়েছে সুখ। (সুরা আল-ইনশিরাহ)", 
         "This bad time will pass, but my love for you is permanent. ❤️"
     ],
     'env-mad': [
         "I am so sorry for whatever stupid thing I did! Please forgive me. 🥺❤️",
+        "যারা সুসময়ে ও দুঃসময়ে ব্যয় করে এবং ক্রোধ সংবরণ করে ও মানুষকে ক্ষমা করে। আর আল্লাহ সৎকর্মশীলদের ভালবাসেন।",
+        "আর যারা গুরুতর পাপ ও অশ্লীল কার্যকলাপ থেকে বেঁচে থাকে এবং যখন রাগান্বিত হয় তখন তারা ক্ষমা করে দেয়।",
         "Even when you are mad, you look incredibly cute. Just saying... 🙈"
     ],
     'env-sleep': [
